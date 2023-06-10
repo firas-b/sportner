@@ -71,6 +71,21 @@
                   </div>
 
                   <div class="form-outline mb-4">
+                    <input type="tel" id="form3Example3cg"  name="phone" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example3cg">Phone number</label>
+                    @error('phone')
+                        {{$message}}
+                    @enderror
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example3cg"  name="city" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example3cg">City</label>
+                    @error('city')
+                        {{$message}}
+                    @enderror
+                  </div>
+
+                  <div class="form-outline mb-4">
                     <input type="file" id="form3Example3cg"  name="avatar" class="form-control form-control-lg" />
                     <label class="form-label" for="form3Example3cg">Your image</label>
                     @error('avatar')

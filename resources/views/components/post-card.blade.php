@@ -19,7 +19,7 @@
     .card{
           /* margin-top: 0%;
          margin-bottom: 20px; */
-
+border-radius:10px ;
          width: 100%;
  
   background: linear-gradient(
@@ -44,7 +44,7 @@
             <div class="row card-title  " style="margin-bottom: 20px;">
 
                 <div class="col">
-                    <img  src="{{ $post->users->avatar  ?   asset('storage/'.$post->users->avatar ) : asset('/images/no-image.jpg') }}" width="50" class="rounded-circle ">
+                    <img  src="{{ $post->users->avatar  ?   asset('storage/'.$post->users->avatar ) : asset('/images/no-image.jpg') }}" width="50" class="rounded-circle ml-2">
                     <b class="ml-2">{{ $post->users->name }}</b>   
                 </div>
 

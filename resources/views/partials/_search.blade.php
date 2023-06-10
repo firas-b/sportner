@@ -5,6 +5,10 @@
           <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-search"></i></button>
         </div>
         <input name='search'type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+
+
+        <a  href='/posts/create'class="btn btn-primary ml-2" ><i class="fa-solid fa-search"></i> create a post</a>
+
       </div>
      
  </form>
