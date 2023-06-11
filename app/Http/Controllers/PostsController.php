@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+
 use Illuminate\Http\Request;
+
+
+// Your code here
 
 class Postscontroller extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
@@ -59,7 +65,7 @@ class Postscontroller extends Controller
 
         return view('posts.show',[
 
-            'post'=>Post::findorfail($id)->get(),
+            'post'=>Post::find($id),
         ]);
         
     }

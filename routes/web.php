@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Commentscontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
@@ -40,3 +41,11 @@ Route::get('/login', [Usercontroller::class,'login']);
 Route::post ('/user/authenticate',[Usercontroller::class,'authenticate']);
 //logout user 
 Route::get('/user/logout', [Usercontroller::class,'logout']);
+
+
+//show comment lists
+Route::post('/comments/{id}',[Commentscontroller::class,'store']);
+
+
+
+

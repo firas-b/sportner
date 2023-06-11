@@ -17,8 +17,8 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_post'=>$this->faker->numberBetween($min = 1, $max = 5),
-            'id_user'=>$this->faker->numberBetween($min = 1, $max = 5),
+            'id_post'=>1,
+            'id_user'=>1,
             'text'=>$this->faker->sentence(),
         ];
     }

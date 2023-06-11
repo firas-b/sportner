@@ -12,7 +12,7 @@ class Commentscontroller extends Controller
      */
     public function index()
     {
-        //
+      
     }
 
     /**
@@ -26,9 +26,17 @@ class Commentscontroller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+        $formfeils=$request->validate([
+
+            'text'=>'required',
+        ]);
+
+        $formfeils['id_post']=$id;
+        $formfeils['id_user']=auth()->id();
+        Comment::create($formfeils);
+        return back();
     }
 
     /**
