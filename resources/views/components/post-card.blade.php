@@ -103,7 +103,7 @@
             <p class="card-text ">{{ $post->message }}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group mt-1 btn-group-sm">
-                    <a href="/posts/{{ $post }}" type="button" class="btn btn-secondary"><i
+                    <a href="/posts/{{ $post }}" ><i
                             class="fas fa-eye"></i></a>
                    
                 </div>

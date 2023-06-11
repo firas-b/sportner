@@ -15,8 +15,10 @@ class Post extends Model
         if ($filter['tag'] ?? false) {
             $query->where('tags', 'like', '%' . request('tag') . '%');
         }
+
+      
         if($filter['search']??false){
-            $query->where('username', 'like', '%' . request('search') . '%')
+            $query->where('user_id', 'like', '%' . User::where('name','%'.request('search').'%')->get()->id. '%')
             ->orwhere('message', 'like', '%' . request('search') . '%')
             ->orwhere('location', 'like', '%' . request('search') . '%');
         }
@@ -25,5 +27,12 @@ class Post extends Model
     public function users(){
         return $this->belongsTo(User::class,'user_id');
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class,'id_post');
+    }
+
+
+
 }
 

@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'phone',
         'city',
+        'facebook',
         'avatar',
         'password',
     ];
@@ -49,5 +50,11 @@ class User extends Authenticatable
 
     public function posts(){
         return $this->hasMany(Post::class,'user_id');
+    }
+
+
+    public function comments(){
+
+        return $this->hasMany(Comment::class,'id_user');
     }
 }

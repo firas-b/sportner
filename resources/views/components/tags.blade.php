@@ -8,7 +8,7 @@
 
     @foreach ($tags as $tag)
    
-    <a class="tag" id="tag "href="/?tag={{$tag}}">{{$tag}}</a>
+    <a  style=" font-style: italic; color:black;" href="/?tag={{$tag}}">#{{$tag}}</a>
     
     @endforeach
    
