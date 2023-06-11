@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class Postscontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,6 +44,7 @@ class PostsController extends Controller
          $formFeilds['user_id']=auth()->id();
 
         Post::create($formFeilds);
+        
              return redirect('/')->with('message','Post created successfully');
 
 
@@ -101,5 +102,15 @@ class PostsController extends Controller
         $post= post::find($id);
        $post->delete();
         return redirect('/')->with('message','post deleted successfully');
+    } 
+
+
+    public function manage(){
+        return view('posts.manage',[
+
+            'posts'=>auth()->user()->posts()->latest()->paginate(4),
+        ]);
+
+
     }
 }

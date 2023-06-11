@@ -24,8 +24,9 @@ use App\Http\Controllers\Usercontroller;
 
 
 Route::get('/',[Postscontroller::class,'index']);
-Route::resource('posts',Postscontroller::class)->except('index');
-Route::get('/posts/manage' ,[Postscontroller::class,'manage']);
+Route::resource('posts',Postscontroller::class)->except('index' ,'manage');
+
+Route::get('/posts_manage',[Postscontroller::class,'manage'])->name('manage');
 
 
 //shwo register form 

@@ -6,7 +6,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <img src="" alt="">
-        <div class="carousel-item active" style="background-image: url('{{ asset('images/back1.jpg') }}')">
+        <div class="carousel-item active" style="background-image: url('{{ asset('images/back1-removebg-preview.png') }}')">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="">First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>

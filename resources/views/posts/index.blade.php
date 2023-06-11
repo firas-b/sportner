@@ -1,5 +1,7 @@
 @extends('layout')
 @section('content')
+
+<x-container>
 @include('partials._search')
 <x-row>
 
@@ -20,4 +22,5 @@
 <div class="d-flex ">
     {!! $posts->links() !!}
 </div>
+</x-container>
 @endsection
