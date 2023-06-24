@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         return [
 
-          'user_id'=>1,
+          'user_id'=>$this->faker->numberBetween(1,4),
             'tags'=>'sport,football,tennis',
             'location'=>$this->faker->city(),
             'message'=>$this->faker->paragraph(4),

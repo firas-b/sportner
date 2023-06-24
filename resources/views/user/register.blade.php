@@ -77,6 +77,15 @@
                         {{$message}}
                     @enderror
                   </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="link" id="form3Example3cg"  name="facebook" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example3cg">Facebook Url</label>
+                    @error('phone')
+                        {{$message}}
+                    @enderror
+                  </div>
+
                   <div class="form-outline mb-4">
                     <input type="text" id="form3Example3cg"  name="city" class="form-control form-control-lg" />
                     <label class="form-label" for="form3Example3cg">City</label>

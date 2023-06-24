@@ -23,7 +23,8 @@ class Usercontroller extends Controller
             'name' => 'required|min:3',
             'email' => 'required|unique:users',
             'phone' => 'required|numeric|min:8',
-            'city'=>'required',
+            'facebook'=>'required',
+             'city'=>'required',
             'password' => 'required|confirmed|min:6'
             
 

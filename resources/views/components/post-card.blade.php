@@ -1,18 +1,7 @@
 @props(['post'])
 
 <style>
-    .card-text {
-        /* the line height must be known */
-        line-height: 2.5ex;
-    }
-
-    .card-text {
-        /* restrict the height to three lines */
-        height: calc(2.5ex * 7);
-
-        /* hide the overflow */
-        overflow: hidden;
-    }
+    
 
     #card {
         /* margin-top: 0%;
@@ -22,8 +11,8 @@
         background: linear-gradient(to top,
                 #f8f9fa 0%,
                 #f8f9fa 80%,
-                rgba(137, 210, 210, 0.919) 90%,
-                rgba(137, 210, 210, 0.919) 90%);
+                rgba(81, 190, 249, 0.919) 90%,
+                rgba(81, 190, 249, 0.919) 90%);
     }
 
 
@@ -60,13 +49,13 @@
                 <div class="col position-relative">
                     <div class="row">
                         <div class="col-10">
-                            <img src="{{ $post->users->avatar ? asset('storage/' . $post->users->avatar) : asset('/images/no-image.jpg') }}"
+                            <img src="{{ $post->users->avatar ? asset('storage/'.$post->users->avatar) :asset('/images/no-image.jpg')}}"
                                 width="50" class="rounded-circle ml-2">
                             <b class="ml-2" style="color:white">{{ $post->users->name }}</b>
                         </div>
                         <div class="col-2 postion-relative">
                             @if (auth()->id() == $post->user_id)
-                                <div class="dropdown dropstart" style="transform: translate(25px); ">
+                                <div class="dropdown dropstart" style="transform: translate(80%); ">
                                     <i id="link" class="fas fa-ellipsis-vertical" data-bs-toggle="dropdown"
                                         aria-expanded="false"></i>
                                     <ul class="dropdown-menu fluid" style="">
@@ -104,8 +93,10 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group mt-1 btn-group-sm">
                     <a href="/posts/{{ $post->id }}" ><i
-                            class="fas fa-eye"></i></a>
-                   
+                            class="fas fa-eye"></i></a>      
+
+                            <a href="{{$post->users->facebook}}" ><i class="fa-brands fa-facebook" style="margin-left: 15px "></i></a>
+                            <a href="https://wa.me/+216{{$post->users->phone}}" ><i class="fa-brands fa-whatsapp" style="margin-left: 15px "></i></a>
                 </div>
                 <small class="text-muted mt-1">
                     <x-tags :tagscsv="$post->tags" />

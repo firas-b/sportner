@@ -25,27 +25,30 @@ use App\Http\Controllers\Usercontroller;
 
 
 Route::get('/',[Postscontroller::class,'index']);
-Route::resource('posts',Postscontroller::class)->except('index' ,'manage');
+Route::resource('posts',Postscontroller::class)->except('index' ,'manage')->middleware('auth');
 
-Route::get('/posts_manage',[Postscontroller::class,'manage'])->name('manage');
+Route::get('/posts_manage',[Postscontroller::class,'manage'])->name('manage')->middleware('auth');
 
 
 //shwo register form 
-Route::get('/register', [Usercontroller::class,'register']);
+Route::get('/register', [Usercontroller::class,'register'])->middleware('guest');
 //create new user ;
-Route::post('/user' ,[Usercontroller::class,'create']);
+Route::post('/user' ,[Usercontroller::class,'create'])->middleware('guest');
 
 // show login form
-Route::get('/login', [Usercontroller::class,'login']);
+Route::get('/login', [Usercontroller::class,'login'])->name('login')->middleware('guest');
 // authnticate user
 Route::post ('/user/authenticate',[Usercontroller::class,'authenticate']);
 //logout user 
-Route::get('/user/logout', [Usercontroller::class,'logout']);
+Route::get('/user/logout', [Usercontroller::class,'logout'])->middleware('auth');
 
 
-//show comment lists
-Route::post('/comments/{id}',[Commentscontroller::class,'store']);
+// addc omment 
+Route::post('/comments/{id}',[Commentscontroller::class,'store'])->middleware('auth');
 
-
+// 404 
+Route::fallback(function(){
+return view ('404');
+});
 
 
